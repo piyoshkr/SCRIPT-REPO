@@ -3,7 +3,8 @@
 # Change these variables to match your repository
 username="piyoshkr"
 repository="script-repo"
-   auth:"your token"
+   auth: 'your token'
+})   
 # Make a request to the GitHub API to get the latest release
 response=$(curl -s "https://api.github.com/repos/$username/$repository/releases/latest")
 
