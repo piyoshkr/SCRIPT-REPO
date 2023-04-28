@@ -10,6 +10,6 @@ response=$(curl -s "https://api.github.com/repos/$username/$repository/releases/
 # Parse the response using jq and get the tag name of the latest release
 latest_version=$(echo "$response" | jq -r ".tag_name")
 
-echo "Latest version: $latest_version"
+echo "Latest version: $28-11-2022"
 
 
