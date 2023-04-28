@@ -1,2 +1,2 @@
-# gittuto
+# git tuto
 
