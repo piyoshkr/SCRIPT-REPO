@@ -1,0 +1,38 @@
+	
+url	"https://api.github.com/repos/piyoshkr/script-repo/releases/101370472"
+assets_url	"https://api.github.com/repos/piyoshkr/script-repo/releases/101370472/assets"
+upload_url	"https://uploads.github.com/repos/piyoshkr/script-repo/releases/101370472/assets{?name,label}"
+html_url	"https://github.com/piyoshkr/script-repo/releases/tag/new"
+id	101370472
+author	
+login	"piyoshkr"
+id	126662434
+node_id	"U_kgDOB4y3Ig"
+avatar_url	"https://avatars.githubusercontent.com/u/126662434?v=4"
+gravatar_id	""
+url	"https://api.github.com/users/piyoshkr"
+html_url	"https://github.com/piyoshkr"
+followers_url	"https://api.github.com/users/piyoshkr/followers"
+following_url	"https://api.github.com/users/piyoshkr/following{/other_user}"
+gists_url	"https://api.github.com/users/piyoshkr/gists{/gist_id}"
+starred_url	"https://api.github.com/users/piyoshkr/starred{/owner}{/repo}"
+subscriptions_url	"https://api.github.com/users/piyoshkr/subscriptions"
+organizations_url	"https://api.github.com/users/piyoshkr/orgs"
+repos_url	"https://api.github.com/users/piyoshkr/repos"
+events_url	"https://api.github.com/users/piyoshkr/events{/privacy}"
+received_events_url	"https://api.github.com/users/piyoshkr/received_events"
+type	"User"
+site_admin	false
+node_id	"RE_kwDOJceB184GCspo"
+tag_name	"new"
+target_commitish	"master"
+name	"v2.3.4"
+draft	false
+prerelease	false
+created_at	"2023-04-28T12:29:38Z"
+published_at	"2023-04-29T09:59:29Z"
+assets	[]
+tarball_url	"https://api.github.com/repos/piyoshkr/script-repo/tarball/new"
+zipball_url	"https://api.github.com/repos/piyoshkr/script-repo/zipball/new"
+
+hello how are you

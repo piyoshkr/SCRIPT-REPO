@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Set repository variables
+owner="piyoshkr"
+repository="script-repo"
+
+# Set API URL to get latest release
+api_url="https://api.github.com/repos/$owner/$repository/releases/latest"
+
+# Get the latest release information
+release_info=$(curl -s "$api_url")
+latest_version=$(echo "$release_info" | grep -oP '"tag_name": "\K(.*)(?=")')
+
+# Set directory path for the repository
+previous_name="script-repo"
+previous_path="$HOME/$previous_name"
+new_path="$HOME/$new_name"
+
+# Check if the repository directory already exists
+if [ -d "$new_path" ]; then
+    echo "Repository already exists with the new name."
+    cd "$new_path"
+    current_version=$(git describe --abbrev=0 --tags)
+else
+    if [ -d "$previous_path" ]; then
+        echo "Renaming directory..."
+        mv "$new_path" "$previous_path"
+        echo "Directory renamed to $new_name."
+        cd "$new_path"
+    else
+        # Clone the repository
+        echo "Cloning repository..."
+        git clone "https://github.com/$owner/$repository.git" "$new_path"
+        cd "$new_path"
+    fi
+fi
+
+# Check if the script version is up to date
+if [ "$latest_version" != "$(git describe --abbrev=0 --tags)" ]; then
+    echo "A new version of the script is available."
+fi
+

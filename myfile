@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Set variables
+username="piyoshkr"
+repository="script-repo"
+urls="https://api.github.com/repos/$username/$repository/releases/latest"
+
+# Get the latest version number
+version=$(curl -s $urls | grep -oP '"tag_name": "\K(.*)(?=")')
+echo "Latest version: $version"
+
+# Check if the latest version is already downloaded
+if [ -d "$repository-$version" ]; then
+    echo "Latest version already downloaded."
+else
+    # Download the latest version
+    echo "Downloading latest version..."
+    curl -sL "https://github.com/$username/$repository/archive/refs/tags/$version.tar.gz" | tar xz
+    echo "Latest version downloaded."
+fi
+
+# Check if the script version is up to date
+if [ "$version" = "$(cd ~|ls|grep "$repository"|sed "s/$repository-//g")" ] ; then
+    echo "The script is up to date."
+else
+    echo "A new version of the script is available: $version"
+fi
+
+# Pull changes if the repository already exists
+if [ -d "$repository" ]; then
+    cd "$repository"
+    #git pull
+    curl -sL "https://github.com/$username/$repository/archive/refs/tags/$version.tar.gz" | tar xz
+    echo "Repository updated to latest version."
+fi
+
+
+
